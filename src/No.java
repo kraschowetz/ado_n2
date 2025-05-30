@@ -47,9 +47,9 @@ public class No <T>{
             b.append(a.fim.valor);
             b.append("\n");
         }
-        b.append("}");
+        b.append("}\n");
         b.append(hcost);
-        b.append("\n");
+        b.append(" metros até o seu destino!\n");
 
         return b.toString();
     }

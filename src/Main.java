@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Grafo<String> grafo = new Grafo<>();
@@ -83,10 +85,31 @@ public class Main {
 
         AStar<String> aStar = new AStar<>();
 
-        var caminho = aStar.calcPath(grafo.getNo("A"), grafo.getNo("K"));
+        Scanner scan = new Scanner(System.in);
+        No<String> inicio = null, fim = null;
+        while(inicio == null) {
+            System.out.println("digite o nó de inicio:");
+            inicio = grafo.getNo(scan.nextLine().toUpperCase());
+            if(inicio == null) {
+                System.out.println("nó inválido!");
+            }
+        }
+        
+        while(fim == null) {
+            System.out.println("digite o nó de fim:");
+            fim = grafo.getNo(scan.nextLine().toUpperCase());
+            if(fim == null) {
+                System.out.println("nó inválido!");
+            }
+        }
 
+        var caminho = aStar.calcPath(inicio, fim);
+
+        System.out.println("\nmelhor caminho:\n");
         for(No<String> n : caminho) {
             System.out.println(n);
         }
+
+        
     }
 }

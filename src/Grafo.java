@@ -34,7 +34,7 @@ public class Grafo <T> {
 
     public No<T> getNo(T valor) {
         for(No<T> n : nos) {
-            if(n.getValor() == valor) {
+            if(n.getValor().equals(valor)) {
                 return n;
             }
         }

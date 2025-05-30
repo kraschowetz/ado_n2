@@ -5,6 +5,8 @@ public class No <T>{
     private T valor;
     private List<Aresta<T>> arestas;
 
+    public int hcost = -1;
+
     public No(T valor) {
         this.valor = valor;
         this.arestas = new ArrayList<>();
@@ -46,6 +48,8 @@ public class No <T>{
             b.append("\n");
         }
         b.append("}");
+        b.append(hcost);
+        b.append("\n");
 
         return b.toString();
     }

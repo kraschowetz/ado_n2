@@ -81,6 +81,12 @@ public class Main {
         grafo.adicionaAresta(317, "X", "A");
         grafo.adicionaAresta(370, "A", "V");
 
-        grafo.printGrafo();
+        AStar<String> aStar = new AStar<>();
+
+        var caminho = aStar.calcPath(grafo.getNo("A"), grafo.getNo("K"));
+
+        for(No<String> n : caminho) {
+            System.out.println(n);
+        }
     }
 }

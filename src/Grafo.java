@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Grafo <T> {
-    private List<No<T>> nos;
+    private ArrayList<No<T>> nos;
 
     public void adicionaVertice(T vertice) {
         nos.add(new No<>(vertice));
@@ -31,5 +30,14 @@ public class Grafo <T> {
         for(No<T> n : nos) {
             System.out.println(n);
         }
+    }
+
+    public No<T> getNo(T valor) {
+        for(No<T> n : nos) {
+            if(n.getValor() == valor) {
+                return n;
+            }
+        }
+        return null;
     }
 }
